@@ -1,13 +1,14 @@
 const add = document.querySelector('.add');
 const remove = document.querySelector('.remove');
+const edit = document.querySelector('.edit');
 let count = 1
 
 let addTodo = (task) => {
     let addelement = document.createElement('li')
     let text = document.createTextNode("Id Number: " + count + ' ' + task);
     addelement.appendChild(text)
+    
     let under = document.getElementById('ele');
-    console.log(under)
     under.appendChild(addelement)
     
     addelement.setAttribute('id', count)
@@ -24,9 +25,13 @@ let removeFunc = (enterId) => {
     }
 }
 
+let editFunc = (enterId, editedText) => {
+    getId = document.getElementById(enterId)
+    getId.innerHTML = "Id Number: " + enterId +" " + editedText
+}
+
 
 add.onclick = () => {
-    console.log('add')
     const task = prompt('Add a task', );
     addTodo(task)
 }
@@ -34,4 +39,10 @@ add.onclick = () => {
 remove.onclick = () => {
     const enterId = prompt('Enter Id you want t delete: ')
     removeFunc(enterId)
+}
+
+edit.onclick = () => {
+    const getId = prompt('Enter the id you want to edit: ')
+    const editedText = prompt('')
+    editFunc(getId, editedText)
 }
