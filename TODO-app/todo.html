@@ -4,16 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>TODO</title>
+    <link rel="stylesheet" href="todo.css">
 </head>
 
 <body>
-    <h2>TODO list</h2>
-    <ul id="ele">
-    </ul>
-    <button class="add">Add</button>
-    <button class="remove">Remove</button>
-    <button class="edit">Edit</button>
+    <div class="body">
+        <h2>TODO list</h2>
+        <div class="containInput">
+            <div class="inputText">
+                <label for="text"> Enter Task:</label>
+                <input name='text' id="text" type="text" placeholder="Use this field for Add and Edit" />
+            </div>
+            <div class="inputId">
+                <label for="id">Enter ID:</label>
+                <input name="id" id="id" type="number" placeholder="Use this field for remove and Edit">
+            </div>
+            
+        </div>
+        <ul id="ele">
+        </ul>
+
+        <div class="">
+            <button class="add">Add</button>
+            <button class="remove">Remove</button>
+            <button class="edit">Edit</button>
+        </div>
+    </div>
+    
 
     <script src="todo.js"></script>
 </body>

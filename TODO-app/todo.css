@@ -1,0 +1,12 @@
+.body{
+    display: block;
+    height: 100%;
+    margin: 10% 40%;
+    /* text-align: center; */
+}
+.containInput{
+    width: 100%;
+}
+.inputText, .inputId{
+    margin-top: 1rem;
+}
