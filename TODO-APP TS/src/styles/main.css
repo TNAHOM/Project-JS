@@ -1,0 +1,65 @@
+.inputs{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+.inputs .task,
+ol{
+    font-size: 17px;
+}
+.inputs button{
+    border: 0;
+    border-radius: 6px;
+    padding: 6px 12px;
+    color: white;
+}
+.inputs .edit{
+    background-color: rgb(222, 222, 51);
+}
+.inputs .delete{
+    background-color: rgb(222, 51, 51);
+}
+h2{
+    text-align: left;
+}
+.container {
+    width: 30%;
+    margin: auto;
+    margin-top: 100px;
+    text-align: center;
+    padding: 0;
+}
+.add{
+    color: white;
+    padding: 6px 20px;
+    background-color: rgb(51, 57, 222);
+    border: none;
+    border-radius: 6px;
+}
+input[type="text"]{
+    border-radius: 6px;
+    border-style: solid;
+    padding: 6px 8px;
+    width: 100%;
+}
+.inner{
+    text-align: left;
+    display: grid;
+    grid-template-columns: auto 80%;
+    /* gap: -2rem; */
+}
+.editContainer{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 1rem;
+    gap: 1rem;
+}
+.doneTask{
+    border: 0;
+    border-radius: 6px;
+    padding: 6px 12px;
+    color: white;
+    background-color: rgb(135, 161, 255);
+}
