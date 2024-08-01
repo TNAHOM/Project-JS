@@ -1,0 +1,57 @@
+.container {
+  display: flex;
+  justify-content: center;
+  padding-top: 100px;
+}
+
+.task {
+  display: flex;
+  margin-bottom: 0.6rem;
+  width: 100%;
+  justify-content: space-between;
+}
+.buttons{
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 1rem;
+}
+.edit{
+    background-color: rgb(233, 206, 28);
+}
+.delete{
+    background-color: rgb(233, 28, 28);
+}
+.Update{
+    background-color: rgb(28, 233, 48);
+}
+
+li{
+    font-size: 18px;
+    font-weight: 600;
+}
+.input{
+    display: grid;
+    grid-template-columns: auto 10%;
+    gap: 0.8rem;
+}
+input[type='text']{
+    width: 100%;
+    border-radius: 8px;
+    border-width: 1px;
+    padding: 6px;
+    box-sizing: border-box;
+}
+button{
+    border-radius: 8px;
+    border: 0;
+    padding: 6px;
+    width: 60px;
+    color: white;
+}
+.Add{
+    background-color: rgb(35, 28, 233);
+}
+
+.inner{
+    width: 600px;
+}
