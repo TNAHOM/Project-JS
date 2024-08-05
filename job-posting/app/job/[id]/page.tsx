@@ -1,16 +1,14 @@
-import React from 'react'
-import { JobPosting } from '@/app/utils/types'
-import jobs from '../../../public/jobs.json'
-import Left from './Left';
+import React from "react";
+import Left from "./Left";
 import Right from "./Right";
 
 interface IdType {
   params: {
-    id:number
-  }
+    id: number;
+  };
 }
 
-const page = ({params}:IdType) => {
+const page = ({ params }: IdType) => {
   return (
     <div className="grid grid-cols-4 gap-4">
       <div className="col-span-3 p-8">
@@ -21,6 +19,6 @@ const page = ({params}:IdType) => {
       </div>
     </div>
   );
-}
+};
 
-export default page
+export default page;

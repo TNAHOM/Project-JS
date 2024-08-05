@@ -1,23 +1,23 @@
 import React from "react";
-import { JobPosting } from "@/app/utils/types";
+import { JobPosting } from "../app/utils/types";
 
 const SingleJob = ({ job }: { job: JobPosting }) => {
   return (
     <div className="flex gap-6 border rounded-[30px] py-[24px] px-[37px]">
       <div className="">
         <div className="w-20 ">
-          <img
-            src={`/images${job.image}`}
-            alt={job.image}
-            className="w-20 h-20"
-          />
+          {job.logoUrl !== "" ? (
+            <img src={job.logoUrl} alt={job.logoUrl} className="w-20 h-20" />
+          ) : (
+            <p>Logo not avialable</p>
+          )}
         </div>
       </div>
       <div className="">
         <h3 className="font-semibold text-xl font-epilogue">{job.title}</h3>
         <p className="light-small">
-          {job.company} <b className="font-black w-[4px] h-[4px]">.</b>{" "}
-          {job.about.location}
+          {job.orgName} <b className="font-black w-[4px] h-[4px]">.</b>{" "}
+          {job.location}
         </p>
         <p className=" text-base leading-6 font-normal my-2 font-epilogue text-[#25324B]">
           {job.description}

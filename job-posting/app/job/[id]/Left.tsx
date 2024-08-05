@@ -1,23 +1,40 @@
 import React from "react";
-import jobs from "../../../public/jobs.json";
 import { CheckCircleIcon } from "@heroicons/react/24/outline";
-
+import { getJob } from "@/app/utils/fetchById";
+import { JobPosting, ResponseData } from "@/app/utils/types";
 interface IdType {
   id: number;
 }
 
-const left = ({ id }: IdType) => {
-  const GetObject = jobs.job_postings[id];
-  const responsibility = GetObject.responsibilities;
-  const ideal_candidate = GetObject.ideal_candidate;
+const left = async ({ id }: IdType) => {
+  const response: ResponseData = await getJob(id);
+  const GetData: JobPosting = response.data; // Assuming the first item is the job we want
+
+  const responsibility = GetData.responsibilities;
+  const ideal_candidate = GetData.idealCandidate;
+  const requirements = GetData.requirements;
+
+  const responsibilitiesArray: string[] = responsibility
+    .split("\n")
+    .map((item: string) => item.trim())
+    .filter((item: string) => item !== "");
+
+  const ideal_candidateArray: string[] = ideal_candidate
+    .split(",")
+    .map((item: string) => item.trim())
+    .filter((item: string) => item !== "");
+
+  const requirementsArray: string[] = requirements
+    .split("\n")
+    .map((item: string) => item.trim())
+    .filter((item: string) => item !== "");
 
   return (
     <div className="flex flex-col gap-y-14 py-11">
-
       <div className="">
         <h2 className="main-line">Responsibility</h2>
         <ul className="mt-4 flex flex-col gap-2">
-          {responsibility.map((res, index) => (
+          {responsibilitiesArray.map((res, index) => (
             <li key={index} className="dark-small flex gap-2">
               <CheckCircleIcon className="size-6  text-[#56CDAD]" />
               {res}
@@ -27,20 +44,27 @@ const left = ({ id }: IdType) => {
       </div>
 
       <div className="">
-        <h2 className="main-line">Ideal Candidates</h2>
+        <h2 className="main-line mb-4">Ideal Candidates</h2>
 
         <ul className="list-disc flex flex-col gap-2">
-          <li className="dark-small mt-4 font-bold">
-            <b>
-              {ideal_candidate.age} {ideal_candidate.gender} {GetObject.title}
-            </b>
-          </li>
-          {ideal_candidate.traits.map((trait, index) => {
-            const [boldPart, restOfText] = trait.split(":");
-
+          {ideal_candidateArray.map((trait, index) => {
             return (
-              <li key={index} className="dark-small">
-                <strong>{boldPart}:</strong> {restOfText}
+              <li key={index} className="dark-small mb-2">
+                {trait}
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+
+      <div className="">
+        <h2 className="main-line mb-4">Requirments</h2>
+
+        <ul className="list-disc flex flex-col gap-2">
+          {requirementsArray.map((trait, index) => {
+            return (
+              <li key={index} className="dark-small mb-2">
+                {trait}
               </li>
             );
           })}
@@ -48,7 +72,7 @@ const left = ({ id }: IdType) => {
       </div>
       <div>
         <h2 className="main-line">When & Where</h2>
-        <p className="dark-small mt-4">{GetObject.when_where}</p>
+        <p className="dark-small mt-4">{GetData.whenAndWhere}</p>
       </div>
     </div>
   );

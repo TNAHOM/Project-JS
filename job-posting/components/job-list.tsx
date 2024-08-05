@@ -2,17 +2,23 @@ import Link from "next/link";
 
 import React from "react";
 import SingleJob from "./SingleJob";
-import { JobPosting } from "../app/utils/types";
-
-import jobs from "../public/jobs.json";
+import { JobPosting } from "@/app/utils/types";
 
 const JobList = async () => {
+  const getJob = async () => {
+    const res = await fetch(
+      "https://akil-backend.onrender.com/opportunities/search"
+    );
+    const resJson = await res.json();
+    return resJson;
+  };
+  const data = await getJob();
 
   return (
     <div className="flex flex-col gap-8 ">
-      {jobs.job_postings.map((job: JobPosting, index) => (
-        <Link href={`job/${index}`} key={index}>
-          <SingleJob key={index} job={job} />
+      {data.data.map((job: JobPosting) => (
+        <Link href={`job/${job.id}`} key={job.id}>
+          <SingleJob key={job.id} job={job} />
         </Link>
       ))}
     </div>
