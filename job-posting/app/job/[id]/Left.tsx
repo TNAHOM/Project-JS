@@ -1,6 +1,7 @@
 import React from "react";
 import jobs from "../../../public/jobs.json";
 import { CheckCircleIcon } from "@heroicons/react/24/outline";
+
 interface IdType {
   id: number;
 }
@@ -12,10 +13,6 @@ const left = ({ id }: IdType) => {
 
   return (
     <div className="flex flex-col gap-y-14 py-11">
-      <div className="">
-        <h2 className="main-line">Description</h2>
-        <p className="dark-small mt-4"> {GetObject.description} </p>
-      </div>
 
       <div className="">
         <h2 className="main-line">Responsibility</h2>
