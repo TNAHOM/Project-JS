@@ -7,6 +7,6 @@ export const getJob = async (id: number): Promise<ResponseData> => {
   if (!res.ok) {
     throw new Error("Failed to fetch job");
   }
-  const resJson: ResponseData = await res.json();
+  const resJson = await res.json();
   return resJson;
 };
