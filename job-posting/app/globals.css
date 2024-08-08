@@ -17,12 +17,19 @@
 .dark-small {
   @apply text-base leading-6 font-normal text-[#25324B] font-epilogue;
 }
-.heroi-icons{
-  @apply text-[#26A4FF] size-6
+.heroi-icons {
+  @apply text-[#26A4FF] size-6;
 }
-.right-about{
+.right-about {
   @apply flex gap-4;
 }
-.inner-about{
+.inner-about {
   @apply flex flex-col gap-2;
+}
+.input-label {
+  @apply font-epilogue font-semibold text-xl;
+}
+
+input{
+  @apply border border-2 rounded-[7px] px-4 py-3 mb-6;
 }
