@@ -1,7 +1,4 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
-
-## Getting Started
+# Getting Started
 
 First, run the development server:
 
@@ -22,9 +19,19 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
     - ![Logo](public/images/dash.png)
   - Job Details
     - ![Logo](public/images/detail.png)
-  
+
+    
   ### Version 2
   - Job Listing(Dashboard)
     - ![Logo](public/images/api-dash.png)
   - Job Details
     - ![Logo](public/images/api-detail.png)
+
+  ### Version 3
+  - Login: access this page if the user is not signed in or if try to access the page without authentication
+    - ![Logo](public/images/must-login.png)
+  - SignUp:
+    - ![Logo](public/images/signup.png)
+    - ![Logo](public/images/google-signin.png)
+  - OTP -> email verification
+      -  ![Logo](public/images/otp.png)
