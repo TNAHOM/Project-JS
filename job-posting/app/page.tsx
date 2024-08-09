@@ -1,18 +1,9 @@
-// "use client";
-
-// import { useSession } from "next-auth/react";
 import JobList from "../components/job-list";
 
 export default function Home() {
-  // const { data: session, status } = useSession();
-
+  // console.log(isAuthorized);
   return (
     <>
-      {/* {session ? (
-        <p>Welcome, {session.user?.name}</p>
-      ) : (
-        <p>You are not logged in.</p>
-      )} */}
       <main className="px-32 py-16 rounded-[30px]">
         <div className="header flex justify-between mb-[32px]">
           <div>

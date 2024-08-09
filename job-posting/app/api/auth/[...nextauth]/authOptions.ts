@@ -44,18 +44,21 @@ export const authOptions: NextAuthOptions = {
       },
     }),
   ],
-  // callbacks: {
-  //   async session({ session, token }) {
-  //     session.user = token.user;
-  //     return session;
-  //   },
-  //   async jwt({ token, user }) {
-  //     if (user) {
-  //       token.user = user;
-  //     }
-  //     return token;
-  //   },
-  // },
+  callbacks: {
+    async session({ session, token }) {
+
+      session.user = token.user;
+      return session;
+    },
+    async jwt({ token, user }) {
+      if (user) {
+        console.log(token, user)
+        token.user = user;
+      }
+
+      return token;
+    },
+  },
   pages: {
     signIn: '/login', // Custom login page
   },
