@@ -1,5 +1,5 @@
 import "./globals.css";
-import Nav from "@/components/headers/Nav";
+import Nav from "@/components/Nav";
 import SessionWrapper from "@/components/SessionWrapper";
 import React from "react";
 

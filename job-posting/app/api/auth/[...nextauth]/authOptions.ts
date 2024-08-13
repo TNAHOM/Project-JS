@@ -9,10 +9,6 @@ export const authOptions: NextAuthOptions = {
       clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
       clientId: process.env.GOOGLE_CLIENT_ID as string,
     }),
-    GithubProvider({
-      clientId: process.env.GITHUB_CLIENT_ID as string,
-      clientSecret: process.env.GITHUB_CLIENT_SECRET as string,
-    }),
     CredentialsProvider({
       name: "Credentials",
       credentials: {
@@ -46,13 +42,13 @@ export const authOptions: NextAuthOptions = {
   ],
   callbacks: {
     async session({ session, token }) {
-
       session.user = token.user;
+      // console.log(session);
       return session;
     },
     async jwt({ token, user }) {
       if (user) {
-        console.log(token, user)
+        // console.log(token, user)
         token.user = user;
       }
 

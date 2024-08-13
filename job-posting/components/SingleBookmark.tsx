@@ -1,13 +1,16 @@
 "use client";
 import React from "react";
-import { JobPosting } from "../app/utils/types";
 import Link from "next/link";
 import Bookmark from "./bookmark";
+import { getJob } from "@/app/utils/fetchById";
+import { JobPosting, ResponseData } from "@/app/utils/types";
 import { useSession } from "next-auth/react";
 
-const SingleJob = ({ job }: { job: JobPosting }) => {
+const SingleJob = async ({ eventId }: { eventId: number }) => {
   const { data: session } = useSession();
-  // console.log("session", session?.user?.data?.accessToken);
+  const jobBook: ResponseData = await getJob(eventId);
+  const job: JobPosting = jobBook.data;
+
   return (
     <div className="w-[100%]">
       <div className="col-span-9 flex gap-6 border rounded-[30px] py-[24px] px-[37px] w-[100%]">

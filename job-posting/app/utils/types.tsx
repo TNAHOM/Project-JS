@@ -37,3 +37,14 @@ export interface ResponseData {
   message: string;
   data: JobPosting;
 }
+
+export interface Bookmark {
+  eventID: number;
+  title: string;
+  opType: "inPerson" | "virtual"; // Define the possible values for opType
+  orgName: string;
+  datePosted: string; // ISO 8601 date string
+  dateBookmarked: string; // ISO 8601 date string
+  logoUrl: string;
+  location: string;
+}
